@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import AppSidebar from "@/components/AppSidebar";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}
       >
         <ThemeProvider
           attribute="class"
@@ -31,14 +32,14 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          <main className="flex items-center justify-between">
-            <AppSidebar></AppSidebar>
+          <SidebarProvider>
+            <AppSidebar />
 
-            <div className="w-full">
-              <Navbar></Navbar>
+            <main className="w-full">
+              <Navbar />
               <div className="px-4">{children}</div>
-            </div>
-          </main>
+            </main>
+          </SidebarProvider>
         </ThemeProvider>
       </body>
     </html>

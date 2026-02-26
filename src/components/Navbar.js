@@ -19,7 +19,7 @@ export default function Navbar() {
 
 
     return (
-        <nav className="flex justify-between p-2">
+        <nav className="flex justify-between items-center p-2">
             <div>
                 left side
             </div>
