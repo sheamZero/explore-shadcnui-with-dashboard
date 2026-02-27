@@ -1,12 +1,12 @@
-
-import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar";
+"use client"
+import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarSeparator } from "@/components/ui/sidebar";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger, } from "@/components/ui/dropdown-menu"
 import { HomeIcon, Inbox, Search, Calendar } from "lucide-react"
 import Image from "next/image";
 import Link from "next/link";
 import { User2 } from "lucide-react";
-import { ChevronDown } from "lucide-react";
 import { ChevronUp } from "lucide-react";
+import { Plus } from "lucide-react";
 
 
 
@@ -34,8 +34,9 @@ const items = [
 ]
 
 export default function AppSidebar() {
+
     return (
-        <Sidebar>
+        <Sidebar collapsible="icon">
 
             <SidebarHeader>
                 <SidebarMenu>
@@ -51,8 +52,9 @@ export default function AppSidebar() {
             </SidebarHeader>
 
             <SidebarContent>
+                {/* <SidebarSeparator /> */}
                 <SidebarGroup>
-                    <SidebarGroupLabel>My Labels</SidebarGroupLabel>
+                    <SidebarGroupLabel>My Pages</SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
                             {
@@ -72,6 +74,18 @@ export default function AppSidebar() {
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
+
+
+                <SidebarGroup>
+                    <SidebarGroupLabel>Application</SidebarGroupLabel>
+                    <SidebarGroupAction>
+                        <Plus /> <span className="sr-only">Add Project</span>
+                    </SidebarGroupAction>
+                    <SidebarGroupContent></SidebarGroupContent>
+                </SidebarGroup>
+
+
+
             </SidebarContent>
 
             <SidebarFooter>

@@ -8,6 +8,7 @@ import { CreditCardIcon, LogOutIcon, SettingsIcon, UserIcon, Menu } from "lucide
 import { Button } from "./ui/button"
 import { Sun } from "lucide-react"
 import { useTheme } from "next-themes"
+import { SidebarTrigger, useSidebar } from "./ui/sidebar"
 
 
 
@@ -16,16 +17,17 @@ import { useTheme } from "next-themes"
 export default function Navbar() {
     const { theme, setTheme } = useTheme();
 
-
+    // const { toggleSidebar } = useSidebar()
 
     return (
-        <nav className="flex justify-between items-center p-2">
+        <nav className="flex justify-between items-center px-4 py-2 sticky top-0">
             <div>
-                left side
+                {/* <button onClick={toggleSidebar}>Toggle Sidebar</button> */}
+                <SidebarTrigger/>
             </div>
             <div className="flex items-center justify-center gap-3">
                 <Link href={"/"}>Dashboard</Link>
-                
+
                 {/* theme toggle */}
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
