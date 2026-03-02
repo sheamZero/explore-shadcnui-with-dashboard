@@ -28,22 +28,25 @@ const chartConfig = {
 export default function AppBarChart() {
 
     return (
-        <ChartContainer config={chartConfig} className="min-h-50 w-full">
-            <BarChart accessibilityLayer data={chartData}>
-                <CartesianGrid vertical={false} />
-                <XAxis
-                    dataKey="month"
-                    tickLine={false}
-                    tickMargin={10}
-                    axisLine={false}
-                    tickFormatter={(value) => value.slice(0, 3)}
-                />
-                <ChartTooltip content={<ChartTooltipContent />} />
-                  <ChartLegend content={<ChartLegendContent />} />
-                <Bar dataKey="reactjs" fill="var(--chart-2)" radius={4} />
-                <Bar dataKey="nextjs" fill="var(--chart-3)" radius={4} />
-            </BarChart>
-        </ChartContainer>
+        <div>
+            <h2 className="font-semibold text-xl text-center mb-4">Barchart of React and NextJS</h2>
+            <ChartContainer config={chartConfig} className="min-h-64 w-full">
+                <BarChart accessibilityLayer data={chartData}>
+                    <CartesianGrid vertical={false} />
+                    <XAxis
+                        dataKey="month"
+                        tickLine={false}
+                        tickMargin={10}
+                        axisLine={false}
+                        tickFormatter={(value) => value.slice(0, 3)}
+                    />
+                    <ChartTooltip content={<ChartTooltipContent />} />
+                    <ChartLegend content={<ChartLegendContent />} />
+                    <Bar dataKey="reactjs" fill="var(--chart-2)" radius={4} />
+                    <Bar dataKey="nextjs" fill="var(--chart-3)" radius={4} />
+                </BarChart>
+            </ChartContainer>
+        </div>
 
     )
 };

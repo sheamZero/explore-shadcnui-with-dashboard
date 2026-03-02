@@ -11,9 +11,6 @@ import { useTheme } from "next-themes"
 import { SidebarTrigger, useSidebar } from "./ui/sidebar"
 
 
-
-
-
 export default function Navbar() {
     const { theme, setTheme } = useTheme();
 
